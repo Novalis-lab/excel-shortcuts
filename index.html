@@ -390,6 +390,32 @@
       color: var(--main); font-family: var(--font); font-weight: 700; font-size: 0.82rem;
       cursor: pointer;
     }
+    /* 関連ツール（Excel関数 早見表へ） */
+    .related {
+      display: flex; align-items: center; gap: 14px;
+      margin: 32px 0 0;
+      padding: 16px 14px;
+      border: 1px solid var(--line);
+      background: rgba(255, 255, 255, 0.025);
+      color: var(--text);
+      text-decoration: none;
+      transition: border-color .2s;
+    }
+    .related:hover, .related:focus-visible { border-color: var(--main); }
+    .related-icon {
+      flex: 0 0 44px; height: 44px;
+      display: grid; place-items: center;
+      font-family: var(--font-en); font-size: 1.1rem; font-weight: 800; font-style: italic;
+      color: var(--main);
+      background: var(--bg-2);
+      border: 1px solid var(--line);
+      box-shadow: inset 0 3px 0 var(--main);
+    }
+    .related-text { flex: 1; min-width: 0; line-height: 1.5; }
+    .related-text small { display: block; font-family: var(--font-en); font-size: 0.6rem; letter-spacing: 0.2em; color: var(--main); }
+    .related-text b { display: block; font-size: 1rem; }
+    .related-text span { display: block; font-size: 0.8rem; color: var(--muted); }
+    .related-arrow { color: var(--main); font-size: 1.1rem; }
     .source { margin: 26px 0 0; font-size: 0.76rem; color: var(--dim); line-height: 1.7; }
     .source a { color: var(--muted); }
 
@@ -465,7 +491,7 @@
     .toast.show { opacity: 1; transform: translate(-50%, 0); }
 
     /* ---------- 角の丸み（common.css の --radius で一括管理） ---------- */
-    .card, .card-icon, .search, .os, .os button, .cats button, .empty, .other-os, .other-os button, .ad-slot, .footer-home, .toast { border-radius: var(--radius, 8px); }
+    .card, .card-icon, .search, .os, .os button, .cats button, .empty, .other-os, .other-os button, .related, .related-icon, .ad-slot, .footer-home, .toast { border-radius: var(--radius, 8px); }
     .os button { border-radius: calc(var(--radius, 8px) - 3px); }
     .card::before { left: calc(var(--radius, 8px) - 1px); }
     .card.top-card::before { width: calc(100% - 2 * var(--radius, 8px) + 2px); }
@@ -523,6 +549,17 @@
     <p class="legend" id="legend"></p>
 
     <main id="results" aria-live="polite"></main>
+
+    <!-- 関連ツール：Excel関数 早見表 -->
+    <a class="related" href="https://novalis-lab.github.io/excel-functions/">
+      <span class="related-icon" aria-hidden="true">fx</span>
+      <span class="related-text">
+        <small>RELATED TOOL</small>
+        <b>Excel関数 早見表</b>
+        <span>SUMIFS・VLOOKUP・IFERROR など、よく使う関数の書き方と使用例</span>
+      </span>
+      <span class="related-arrow" aria-hidden="true">→</span>
+    </a>
 
     <!-- 広告スペース：将来ここに広告のコードを貼り付けます -->
     <aside class="ad-slot" id="ad-space" aria-label="広告">広告スペース</aside>
